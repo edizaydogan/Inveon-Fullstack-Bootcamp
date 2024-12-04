@@ -1,6 +1,6 @@
 # Inveon-Fullstack-Bootcamp
 
-## Branch: 1. Hafta Ödev
+## Branch: homework-week-1
 ### Bölüm 1: SOLID Prensipleri
 1. Single Responsibility Principle (SRP)
 2. Open/Closed Principle (OCP)
