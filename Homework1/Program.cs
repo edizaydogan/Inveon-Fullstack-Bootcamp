@@ -1,4 +1,4 @@
-﻿using Homework1;
+﻿using Homework1.SingleResponsibilityPrinciple;
 
 class Program
 {
