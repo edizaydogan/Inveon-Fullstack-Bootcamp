@@ -1,0 +1,15 @@
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/bin/Debug/net9.0/Homework1
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/bin/Debug/net9.0/Homework1.deps.json
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/bin/Debug/net9.0/Homework1.runtimeconfig.json
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/bin/Debug/net9.0/Homework1.dll
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/bin/Debug/net9.0/Homework1.pdb
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/obj/Debug/net9.0/Homework1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/obj/Debug/net9.0/Homework1.AssemblyInfoInputs.cache
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/obj/Debug/net9.0/Homework1.AssemblyInfo.cs
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/obj/Debug/net9.0/Homework1.csproj.CoreCompileInputs.cache
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/obj/Debug/net9.0/Homework1.sourcelink.json
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/obj/Debug/net9.0/Homework1.dll
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/obj/Debug/net9.0/refint/Homework1.dll
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/obj/Debug/net9.0/Homework1.pdb
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/obj/Debug/net9.0/Homework1.genruntimeconfig.cache
+/Users/edizaydogan/Documents/Inveon-Fullstack-Bootcamp/Homework1/obj/Debug/net9.0/ref/Homework1.dll
