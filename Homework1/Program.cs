@@ -12,7 +12,7 @@ class Program
         */
 
         // SRP Example
-        Order order = new Order { Id = 1, ProductName = "Laptop", Quantity = 2, Price = 1501m };
+        Order order = new Order { Id = 1, ProductName = "Laptop", Quantity = 2, Price = 1500m };
         Console.WriteLine($"Total Price: {order.CalculateTotalPrice()}");
 
         OrderRepository repository = new OrderRepository();
