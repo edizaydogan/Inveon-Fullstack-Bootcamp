@@ -1,4 +1,5 @@
-﻿using Homework1.DIP;
+﻿using Homework1.AsyncAwait;
+using Homework1.DIP;
 using Homework1.ISP;
 using Homework1.LSP;
 using Homework1.Methods;
@@ -117,6 +118,9 @@ class Program
 
         await downloadTask;
 
+
+        // Task Static Methods
+        /*
         Task task = Task.Run(() => Console.WriteLine("Task is running."));
         task.Wait(); // İşin tamamlanmasını bekler
 
@@ -171,14 +175,20 @@ class Program
         Task.WaitAll(waitAllTask1, waitAllTask2);
         Console.WriteLine("All tasks in Task.WaitAll completed.");
 
-        // 12. Task.WaitAny
         Console.WriteLine("\nTask.WaitAny");
         var waitAnyTask1 = PerformLongTask("WaitAny Task 1", 2000);
         var waitAnyTask2 = PerformLongTask("WaitAny Task 2", 1000);
         int completedTaskIndex = Task.WaitAny(waitAnyTask1, waitAnyTask2);
         Console.WriteLine($"Task.WaitAny completed: Task {completedTaskIndex + 1}");
+        */
 
+        FileDownloader fileDownloader = new FileDownloader();
 
+        Console.WriteLine("\nScenario 1: Valid file name");
+        await fileDownloader.DownloadFileAsync("example.txt");
+
+        Console.WriteLine("\nScenario 2: Invalid file name");
+        await fileDownloader.DownloadFileAsync(""); // Geçersiz dosya adı
 
 
 

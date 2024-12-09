@@ -10,7 +10,7 @@ namespace Homework1.Methods
         public void DownloadFile()
         {
             Console.WriteLine("Downloading file (synchronous)...");
-            System.Threading.Thread.Sleep(5000); // İşlemi simüle etmek için bekletme
+            System.Threading.Thread.Sleep(3000); // İşlemi simüle etmek için bekletme
             Console.WriteLine("File downloaded (synchronous).");
         }
     }
