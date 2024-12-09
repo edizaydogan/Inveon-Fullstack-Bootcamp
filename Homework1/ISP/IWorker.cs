@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 namespace Homework1.ISP
 {
     // Bad Example of ISP
-    /*
     public interface IWorker
     {
         void Work();
         void TakeBreak();
     }
-
+    /*
     public class OfficeWorker : IWorker
     {
         public void Work()

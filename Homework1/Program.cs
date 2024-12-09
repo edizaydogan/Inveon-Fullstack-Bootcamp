@@ -1,4 +1,5 @@
-﻿using Homework1.ISP;
+﻿using Homework1.DIP;
+using Homework1.ISP;
 using Homework1.LSP;
 using Homework1.OCP;
 using Homework1.SRP;
@@ -82,6 +83,22 @@ class Program
         IWorkable robot = new Robot();
         robot.Work();
 
+
+
+        // DIP Bad Example
+        /*
+        NotificationService notificationService = new NotificationService();
+        notificationService.Notify("Hello, DIP!");
+        */
+
+        // DIP Good Example
+        IMessageSender emailSender = new EmailSender();
+        NotificationService emailNotification = new NotificationService(emailSender);
+        emailNotification.Notify("Hello via Email!");
+
+        IMessageSender smsSender = new SmsSender();
+        NotificationService smsNotification = new NotificationService(smsSender);
+        smsNotification.Notify("Hello via SMS!");
 
     }
 }
