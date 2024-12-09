@@ -1,12 +1,13 @@
 ﻿using Homework1.DIP;
 using Homework1.ISP;
 using Homework1.LSP;
+using Homework1.Methods;
 using Homework1.OCP;
 using Homework1.SRP;
 
 class Program
 {
-    static void Main()
+    static async Task Main()
     {
         // SRP Bad Example
         /*
@@ -100,5 +101,94 @@ class Program
         NotificationService smsNotification = new NotificationService(smsSender);
         smsNotification.Notify("Hello via SMS!");
 
+
+
+        // Synchorous Method
+        /*
+        FileDownloaderSynchoronous downloader = new FileDownloaderSynchoronous();
+        downloader.DownloadFile();
+        */
+
+        // Asynchorous Method
+        FileDownloaderAsynchronous downloader = new FileDownloaderAsynchronous();
+
+        Task downloadTask = downloader.DownloadFileAsync();
+        Console.WriteLine("You can do other work while the file is downloading.");
+
+        await downloadTask;
+
+        Task task = Task.Run(() => Console.WriteLine("Task is running."));
+        task.Wait(); // İşin tamamlanmasını bekler
+
+        await Task.Delay(2000); // 2 saniye bekler
+        Console.WriteLine("2 seconds passed.");
+
+        Task task1 = Task.Delay(2000);
+        Task task2 = Task.Delay(3000);
+        await Task.WhenAll(task1, task2);
+        Console.WriteLine("Both tasks are completed.");
+
+        Task task3 = Task.Delay(2000);
+        Task task4 = Task.Delay(3000);
+        await Task.WhenAny(task3, task4);
+        Console.WriteLine("At least one task is completed.");
+
+        Task<int> task5 = Task.FromResult(42);
+        int result = await task5;
+        Console.WriteLine($"Task5 result: {result}");
+
+        Task task6 = Task.CompletedTask;
+        Console.WriteLine("Task is already completed.");
+
+        Task task7 = Task.Factory.StartNew(() => Console.WriteLine("Task.Factory.StartNew running."));
+        task7.Wait(); // İşin tamamlanmasını bekler
+
+        Console.WriteLine("\nTask.FromException");
+        Task failedTask = Task.FromException(new InvalidOperationException("An error occurred"));
+        try
+        {
+            await failedTask;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Caught exception: {ex.Message}");
+        }
+
+        Console.WriteLine("\nTask.FromCanceled");
+        var cancellationTokenSource = new CancellationTokenSource();
+        cancellationTokenSource.Cancel();
+        Task canceledTask = Task.FromCanceled(cancellationTokenSource.Token);
+        Console.WriteLine("Canceled task created.");
+
+        Console.WriteLine("\nTask.Yield");
+        Console.WriteLine("Before Task.Yield");
+        await Task.Yield();
+        Console.WriteLine("After Task.Yield");
+
+        Console.WriteLine("\nTask.WaitAll");
+        var waitAllTask1 = PerformLongTask("WaitAll Task 1", 1000);
+        var waitAllTask2 = PerformLongTask("WaitAll Task 2", 1500);
+        Task.WaitAll(waitAllTask1, waitAllTask2);
+        Console.WriteLine("All tasks in Task.WaitAll completed.");
+
+        // 12. Task.WaitAny
+        Console.WriteLine("\nTask.WaitAny");
+        var waitAnyTask1 = PerformLongTask("WaitAny Task 1", 2000);
+        var waitAnyTask2 = PerformLongTask("WaitAny Task 2", 1000);
+        int completedTaskIndex = Task.WaitAny(waitAnyTask1, waitAnyTask2);
+        Console.WriteLine($"Task.WaitAny completed: Task {completedTaskIndex + 1}");
+
+
+
+
+
+
+    }
+
+    private static async Task PerformLongTask(string taskName, int delay)
+    {
+        Console.WriteLine($"{taskName} started...");
+        await Task.Delay(delay);
+        Console.WriteLine($"{taskName} completed.");
     }
 }
