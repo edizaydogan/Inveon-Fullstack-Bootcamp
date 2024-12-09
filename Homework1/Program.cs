@@ -1,4 +1,6 @@
-﻿using Homework1.OCP;
+﻿using Homework1.ISP;
+using Homework1.LSP;
+using Homework1.OCP;
 using Homework1.SRP;
 
 class Program
@@ -40,6 +42,46 @@ class Program
         Console.WriteLine($"Clearance Discount: {clearanceCalculator.CalculateDiscount(100)}");
 
 
-    }
 
+        // LSP Bad Example
+        /*
+        Bird eagle = new Eagle();
+        eagle.Fly();
+
+        Bird penguin = new Penguin();
+        // Bu satır çalışma zamanında hata verir
+        penguin.Fly();
+        */
+
+        // LSP Good Example
+        Bird eagle = new Eagle();
+        eagle.MakeSound();
+        ((IFlyingBird)eagle).Fly();
+
+        Bird penguin = new Penguin();
+        penguin.MakeSound();
+
+
+
+        // ISP Bad Example
+        /*
+        IWorker officeWorker = new OfficeWorker();
+        officeWorker.Work();
+        officeWorker.TakeBreak();
+
+        IWorker robot = new Robot();
+        robot.Work();
+        robot.TakeBreak();
+        */
+
+        // ISP Good Example
+        IWorkable officeWorker = new OfficeWorker();
+        officeWorker.Work();
+        ((IRestable)officeWorker).TakeBreak();
+
+        IWorkable robot = new Robot();
+        robot.Work();
+
+
+    }
 }
