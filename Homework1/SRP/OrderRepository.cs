@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Homework1.SingleResponsibilityPrinciple
+namespace Homework1.SRP
 {
     internal class OrderRepository
     {
